@@ -1,0 +1,13 @@
+name: 掘金自动化工作流
+on: push
+
+jobs:
+  followUser:
+    name: 关注掘金用户的关注动态
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - run: python ./Juejin/juejin.py
