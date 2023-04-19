@@ -1,5 +1,8 @@
 name: 掘金自动化工作流
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: 0/5 * * * *
 
