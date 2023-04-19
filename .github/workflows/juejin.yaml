@@ -10,4 +10,4 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.9
-      - run: python Juejin/juejin.py
+      - run: python Juejin/followUser.py
