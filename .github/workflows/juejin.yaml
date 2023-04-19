@@ -1,7 +1,7 @@
 name: 掘金自动化工作流
 on:
-  schedule：
-    - cron: '0/2 * * * *'
+  schedule:
+    - cron: 0/2 * * * *
 
 jobs:
   followUser:
