@@ -11,10 +11,13 @@ jobs:
     name: 关注掘金用户的关注动态
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - name: 拉取代码
+        uses: actions/checkout@v3
+      - name: 设置 Python 版本
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
-      - run: |
+      - name: 安装依赖并运行 python 脚本
+        run: |
           pip install requests
           python Juejin/followUser.py

@@ -24,7 +24,6 @@ def get_user_list():
     return formatDynamicList(user_list['data']['list'])
 
 def formatDynamicList (list):
-    print('item', list)
     # 遍历 list 生成新的 list
     return_list = []
     for item in list:
