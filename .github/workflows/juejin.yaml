@@ -10,6 +10,10 @@ jobs:
   followUser:
     name: 关注掘金用户的关注动态
     runs-on: ubuntu-latest
+    env:
+      EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+      EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+      QQ_MAIL_PASSWORD: ${{ secrets.QQ_MAIL_PASSWORD }}
     steps:
       - name: 拉取代码
         uses: actions/checkout@v3
