@@ -83,6 +83,7 @@ def sendDynamicToEmail(Dynamic):
     sender = os.environ.get('EMAIL_SENDER')
     receiver = os.environ.get('EMAIL_RECEIVER')
     password = os.environ.get('QQ_MAIL_PASSWORD')
+    print('获取环境变量', sender, receiver, password)
     # 设置邮件正文
     message = MIMEText('%s 最近一小时内发布了 %s' % (Dynamic['username'], Dynamic['content']), 'plain', 'utf-8')
     # 设置邮件主题
