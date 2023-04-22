@@ -66,11 +66,9 @@ def getLatestDynamic (DynamicList):
     firstDynamic = DynamicList[0]
     # 当前系统时间
     osTime = time.time()
-    print('当前系统时间：', osTime)
-    print('第一条动态时间：', firstDynamic['time'])
     # 判断是否是当前系统时间时间一小时内发布的文章或者沸
     # 如果是，返回这条动态，如果否，返回空
-    if osTime - firstDynamic['time'] < 36000:
+    if osTime - firstDynamic['time'] < 3600:
         return firstDynamic
     return None
 
@@ -83,7 +81,6 @@ def sendDynamicToEmail(Dynamic):
     sender = os.environ.get('EMAIL_SENDER')
     receiver = os.environ.get('EMAIL_RECEIVER')
     password = os.environ.get('QQ_MAIL_PASSWORD')
-    print('获取环境变量', sender, receiver, password)
     # 设置邮件正文
     message = MIMEText('%s 最近一小时内发布了 %s' % (Dynamic['username'], Dynamic['content']), 'plain', 'utf-8')
     # 设置邮件主题
